@@ -11,42 +11,54 @@ const levels = [
     title: "Phishing E-posta Tespiti",
     difficulty: "Kolay",
     description: "Şüpheli bir e-posta başlığı ve link analizi yap.",
+    layer: "L1",
     mitre: "T1566.001",
+    page: "Phishing"
   },
   {
     id: 2,
     title: "Brute Force Login Anomalisi",
     difficulty: "Kolay",
     description: "Başarısız giriş denemelerini analiz et, saldırgan IP'yi bul.",
+    layer: "L1",
     mitre: "T1110",
+    page: "BruteForce"
   },
   {
     id: 3,
     title: "C2 Beacon Trafiği",
     difficulty: "Orta",
     description: "Düzenli aralıklarla dış sunucuya giden trafiği tespit et.",
+    layer: "L2",
     mitre: "T1071.001",
+    page: "C2Beacon"
   },
   {
     id: 4,
-    title: "Lateral Movement — Pass the Hash",
+    title: "ARP Spoofing Tespiti",
     difficulty: "Orta",
-    description: "İç ağda yatay hareketi takip et, pivot noktasını bul.",
-    mitre: "T1550.002",
+    description: "İç ağda sahte ARP yanıtlarını tespit et, hangi cihaz zehirleniyor bul.",
+    layer: "L2",
+    mitre: "T1557.002",
+    page: "ARPSpoofing"
   },
   {
     id: 5,
     title: "Ransomware İlk Belirtileri",
     difficulty: "Zor",
     description: "Şifreleme başlamadan önce erken uyarı sinyallerini yakala.",
+    layer: "L2 + L3",
     mitre: "T1486",
+    page: "Ransomware"
   },
   {
     id: 6,
     title: "APT — Çok Aşamalı Saldırı",
     difficulty: "Uzman",
     description: "Haftalara yayılan gelişmiş tehdit zincirini baştan sona çöz.",
+    layer: "L3",
     mitre: "T1059",
+    page: "APT"
   },
 ];
 
@@ -62,7 +74,6 @@ export default function LevelSelect({ onStart }) {
 
   return (
     <div className="wrapper">
-
       <div className="bg">
         <LevelSelectBackground />
       </div>
@@ -71,7 +82,7 @@ export default function LevelSelect({ onStart }) {
         <h1 className="mainTitle">SOC Analist Simülasyonu</h1>
         <div className="header">
           <h1>
-          <TextTypeAnimation />
+          <TextTypeAnimation texts={["Tehditleri Analiz Et ve Yorumla", "Gerçek Dünya Senaryolarıyla Pratik Yap"]} typingSpeed={100} />
           </h1>
           <p>Bir senaryo seç ve analiz etmeye başla.</p>
         </div>
@@ -85,7 +96,7 @@ export default function LevelSelect({ onStart }) {
               onMouseLeave={() => setHovered(null)}
             >
               <div className="card-top">
-                <span className="level-num">LVL-0{level.id}</span>
+                <span className="level-num">{level.layer}</span>
                 <span className={`badge ${difficultyClass[level.difficulty]}`}>
                   {level.difficulty}
                 </span>

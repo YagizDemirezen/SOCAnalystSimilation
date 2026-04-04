@@ -1,11 +1,11 @@
 import TextType from '../sourceComponents/TextType';
 
-export default function TextTypeAnimation({ texts }) {
+export default function TextTypeAnimation({ texts, typingSpeed }) {
   return (
     <div className="background-container">
       <TextType
-        text={["Tehditleri Analiz Et ve Yorumla", "Gerçek Dünya Senaryolarıyla Pratik Yap"]}
-        typingSpeed={100}
+        text={texts}
+        typingSpeed={typingSpeed}
         pauseDuration={1500}
         deletingSpeed={50}
         variableSpeedEnabled={false}
