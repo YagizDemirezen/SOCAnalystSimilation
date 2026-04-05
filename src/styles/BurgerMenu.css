@@ -1,10 +1,3 @@
-.bm-menu-wrap,
-.bm-menu,
-.bm-item-list,
-.bm-item {
-  overflow: hidden !important;
-}
-
 .bm-menu-wrap {
   top: 0;
   left: 0;
@@ -20,6 +13,15 @@
   height: 100vh !important;
 }
 
+.bm-menu h1 {
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+
+.bm-menu a {
+  font-size: 15px;
+}
+
 .bm-item-list {
   display: flex;
   flex-direction: column;
@@ -33,7 +35,7 @@
   font-size: 14px;
   color: #888;
   text-decoration: none;
-  padding: 10px 12px;
+  padding: 25px 12px;
   border-radius: 4px;
   border-left: 2px solid transparent;
   transition: all 0.15s;
@@ -43,17 +45,17 @@
   color: #ffffff;
   background: #1a1a1a;
   border-left-color: #1e90ff;
+  cursor: pointer;
 }
 
 .bm-overlay {
   background: rgba(0, 0, 0, 0.7) !important;
 }
 
-/* Hamburger */
 .bm-burger-button {
   position: fixed;
-  width: 24px;
-  height: 18px;
+  width: 30px;
+  height: 30px;
   top: 20px;
   left: 20px;
   z-index: 1000;
@@ -67,7 +69,6 @@
   background: #1e90ff;
 }
 
-/* Close button */
 .bm-cross-button {
   top: 16px !important;
   right: 16px !important;
@@ -85,6 +86,39 @@
   display: block;
   margin: -0px auto 20px;
 }
+
 .cornerImg:hover {
   cursor: pointer;
+
+}
+.github-section {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.github-section a {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.githubStar {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.github-section p {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
 }
